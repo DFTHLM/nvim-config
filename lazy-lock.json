@@ -1,0 +1,11 @@
+{
+  "catppuccin": { "branch": "main", "commit": "7ab1a6ec70a664ecb95d84669efc20aaf4f4ed1b" },
+  "copilot.vim": { "branch": "release", "commit": "cd7f01009fb7b30e22840cadc4faad88b05c6eef" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lualine.nvim": { "branch": "master", "commit": "f4f791f67e70d378a754d02da068231d2352e5bc" },
+  "nvim-treesitter": { "branch": "master", "commit": "8bc635a25f581d42b0a0e5ba8870bd73244dcdea" },
+  "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "telescope-file-browser.nvim": { "branch": "master", "commit": "626998e5c1b71c130d8bc6cf7abb6709b98287bb" },
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "vim-runner": { "branch": "master", "commit": "463094077e4b186dc66bc172af56c6a471101ad7" }
+}
