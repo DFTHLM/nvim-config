@@ -26,6 +26,7 @@ vim.keymap.set('n', '<C-t>', builtin.treesitter, { desc = 'Telescope treesitter'
 vim.keymap.set('n', '<C-f>', builtin.live_grep, { desc = 'Telescope live grep' })
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':split | terminal<CR>', { noremap = true, silent = true })
 
 require("mason").setup()
 require("mason-lspconfig").setup()
