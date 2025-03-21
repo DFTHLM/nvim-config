@@ -22,7 +22,6 @@ require("telescope").load_extension "file_browser"
 
 local builtin = require('telescope.builtin')
 vim.keymap.set("n", "<C-e>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-vim.keymap.set('n', '<C-t>', builtin.treesitter, { desc = 'Telescope treesitter' })
 
 vim.keymap.set('n', '<C-f>', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set("v", "<C-f>", function()
@@ -41,8 +40,10 @@ vim.keymap.set("v", "<C-f>", function()
 end
 , { desc = 'Telescope grep string' })
 
+vim.keymap.set('n', '<C-t>', builtin.lsp_workspace_symbols, { desc = 'Workspace symbols' })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t', ':split | terminal<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover Docs" })
 
 require("mason").setup()
 require("mason-lspconfig").setup()
