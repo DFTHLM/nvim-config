@@ -44,6 +44,8 @@ vim.keymap.set('n', '<C-t>', builtin.lsp_workspace_symbols, { desc = 'Workspace 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>t', ':split | terminal<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover Docs" })
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP Rename" })
+
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -57,4 +59,11 @@ require("mason-lspconfig").setup_handlers {
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', {noremap = true, silent = true})
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', {noremap = true, silent = true})
+vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', {noremap = true, silent = true})
+vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', {noremap = true, silent = true})
+vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', {noremap = true, silent = true})
+vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', {noremap = true, silent = true})
 
