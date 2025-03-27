@@ -21,7 +21,7 @@ require("telescope").setup {
 require("telescope").load_extension "file_browser"
 
 local builtin = require('telescope.builtin')
-vim.keymap.set("n", "<C-e>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+vim.keymap.set("n", "<C-e>", ":Telescope file_browser path=%:p:h select_buffer=true hidden=true<CR>")
 
 vim.keymap.set('n', '<C-f>', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set("v", "<C-f>", function()
@@ -66,4 +66,10 @@ vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', {noremap = true, silent = tr
 vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', {noremap = true, silent = true})
 vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', {noremap = true, silent = true})
 vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', {noremap = true, silent = true})
+
+local local_config = vim.fn.getcwd() .. "/.nvim.lua"
+if vim.fn.filereadable(local_config) == 1 then
+    dofile(local_config)
+end
+
 
