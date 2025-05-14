@@ -50,7 +50,13 @@ vim.api.nvim_set_keymap('n', '<leader>t', ':split | terminal<CR>', { noremap = t
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "LSP Rename" })
 vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "LSP Rename" })
 
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover Docs" })
+vim.keymap.set("n", "K", function()
+  local win = vim.diagnostic.open_float(nil, { focusable = false, scope = "cursor" })
+  if not win then
+    vim.lsp.buf.hover()
+  end
+end, { desc = "Hover or diagnostics" })
+
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
 vim.opt.tabstop = 4
