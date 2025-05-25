@@ -45,17 +45,9 @@ end
 
 vim.keymap.set('n', '<C-t>', builtin.lsp_workspace_symbols, { desc = 'Workspace symbols' })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t', ':split | terminal<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "LSP Rename" })
 vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "LSP Rename" })
-
-vim.keymap.set("n", "K", function()
-  local win = vim.diagnostic.open_float(nil, { focusable = false, scope = "cursor" })
-  if not win then
-    vim.lsp.buf.hover()
-  end
-end, { desc = "Hover or diagnostics" })
 
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
