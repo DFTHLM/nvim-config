@@ -16,9 +16,14 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension "file_browser"
-
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  update_in_insert = true,  -- ← real-time updates
+})
+vim.lsp.inlay_hint.enable(true)  -- for all buffers (Neovim 0.10+)
 
 vim.opt.number = true
 vim.opt.relativenumber = true
