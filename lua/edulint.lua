@@ -26,7 +26,7 @@ function M.run(bufnr)
 end
 
 function M.setup()
-    vim.api.nvim_create_user_command("edulint", function()
+    vim.api.nvim_create_user_command("EduLint", function()
         M.run(0)
     end, {})
 end
